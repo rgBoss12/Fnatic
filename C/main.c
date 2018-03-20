@@ -1354,8 +1354,6 @@ int main(int argc, char *argv[]) {
               int second_32_bits_done;
               char *encrypted_states1;
               char *encrypted_states2;
-              // start = ;
-                    
           			while(true) {
             			if(iter==64) break;
   						    if(!start){
@@ -1395,7 +1393,7 @@ int main(int argc, char *argv[]) {
                   	if(strcmp(decrypted_data,"00100001001000010010000100100001")==0){ /** check ack1 is as expected or not**/
   										first_32_bits_done=1;
   									printf("%s\n", "32 bit done");
-  									}	
+  									}
   								}
   								else if(second_32_bits_done==0)
   								{
@@ -1421,7 +1419,7 @@ int main(int argc, char *argv[]) {
   									char *decrypted_data=decrypt(f2hData);
   								printf("%s\n", decrypted_data);
   									if(strcmp(decrypted_data,"00100001001000010010000100100001")==0) /** check ack1 is as expected or not**/
-  									{	
+  									{
                       second_32_bits_done=1;
   								printf("%s\n","second 32 bits done" );
 
@@ -1433,7 +1431,7 @@ int main(int argc, char *argv[]) {
 
                     int p = 2*iter+1;
                     char q[11];
-                    sprintf(q,"%d",p);       
+                    sprintf(q,"%d",p);
   									line=concat(concat("w",concat(q," ")),encrypted_ack2); /** encrypted ack2 by host2**/
   									add_history(line);
   								printf("%s\n",line );
@@ -1443,7 +1441,7 @@ int main(int argc, char *argv[]) {
                   printf("%s\n", "after first and second 32 bit done");
                   					start = 0;
                   					sleep(32);
-  								}	
+  								}
 
   							}
   							else if(coordinates_done==0)
@@ -1498,7 +1496,7 @@ int main(int argc, char *argv[]) {
                   printf("got decrypted states\n");
   									encrypted_states1=substring_1(encrypted_states,1,8);
                 		encrypted_states2=substring_1(encrypted_states,9,8);
-                	}	
+                	}
                 	else{
                   	sleep(5);
                   	line = concat("r",concat(q," 4"));
